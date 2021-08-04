@@ -54,13 +54,13 @@ If you want you can check the original code [here](http://devmag.org.za/2009/04/
  - `octave=20`
 
 `cmap = "gray"`
-![Perlin Noise with cmap gray](/images/seed=#AU,size=512,octave=20,color=gray.png)
+![Perlin Noise with cmap gray](/images/size512octave20colorgray.png)
 
 `cmap = "gist_earth"`
-![Perlin Noise with cmap gist_earth](/images/seed=#AU,size=512,octave=20,color=gist_earth.png)
+![Perlin Noise with cmap gist_earth](/images/size512octave20colorgist_earth.png)
 
 `cmap = "hot"`
-![Perlin Noise with cmap hot](/images/seed=#AU,size=512,octave=20,color=hot.png)
+![Perlin Noise with cmap hot](/images/size512octave20colorhot.png)
 
 `cmap = "plasma"`
-![Perlin Noise with cmap plasma](/images/seed=#AU,size=512,octave=20,color=plasma.png)
+![Perlin Noise with cmap plasma](/images/size512octave20colorplasma.png)
