@@ -258,3 +258,4 @@ if __name__ == '__main__':
                # cmap="gray")
                # cmap="plasma")
                cmap="hot")
+    plt.show()

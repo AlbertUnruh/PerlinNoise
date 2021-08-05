@@ -39,6 +39,7 @@ from matplotlib import pyplot as plt
 plt.figure(dpi=100)
 plt.imshow(my_perlin_result, cmap="gray")
 # other cmap's I recommend to try are "gist_earth", "plasma" and "hot"
+plt.show()
 ```
 
 ### Did you implement it your own?
