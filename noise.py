@@ -1,29 +1,46 @@
 """
-MIT License
+What is this?
+This is a Perlin-Noise-Generator which can generate Perlin-Noise.
 
-Copyright (c) 2021 AlbertUnruh
+How do I use it?
+You can run following script:
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+>>> from PerlinNoise import Perlin
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+>>> seed = "My Beautiful Seed :)"
+>>> # the seed is optional and has only be set if you want to have the same result
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+>>> width, height = 512, 256
+>>> # the size is optional but it's recommended to insert the values you need
 
-----------
+>>> octave = 10
+>>> # the octave is optional but note that a higher value results in a smoother Noise and needs more time to process
 
-Implementation followed by http://devmag.org.za/2009/04/25/perlin-noise/.
+>>> my_perlin_generator = Perlin(
+>>>     seed=seed,
+>>>     width=width,
+>>>     height=height,
+>>>     octave=octave
+>>> )
+
+>>> # call the generator by `Perlin.generate()` or directly
+>>> my_perlin_result = my_perlin_generator()
+>>> # your perlin-noise is now in a 2D-list with floats between 0 and 1
+
+
+If you want to see the result here is a quick example:
+
+>>> from matplotlib import pyplot as plt
+
+>>> plt.figure(dpi=100)
+>>> plt.imshow(my_perlin_result, cmap="gray")
+>>> # other cmap's I recommend to try are "gist_earth", "plasma" and "hot"
+>>> plt.show()
+
+Did you implement it your own?
+No, I found an example written in `C#` and I rewrote it in Python 3.
+If you want you can check the original code here: https://devmag.org.za/2009/04/25/perlin-noise/ out.
+
 """
 
 from random import Random
