@@ -43,7 +43,7 @@ plt.show()
 ```
 
 ### Did you implement it your own?
-No, I found an example written in `C#` and I "converted" it into `Python3`.
+No, I found an example written in `C#` and I rewrote it in `Python 3`.
 If you want you can check the original code [here](http://devmag.org.za/2009/04/25/perlin-noise/) out.
 
 
