@@ -45,7 +45,7 @@ If you want you can check the original code here: https://devmag.org.za/2009/04/
 
 from noise import *
 
-__all__ = (Perlin,)
+__all__ = ("Perlin",)
 
 __author__ = "AlbertUnruh"
 __copyright__ = "Copyright (c) 2021 AlbertUnruh"
