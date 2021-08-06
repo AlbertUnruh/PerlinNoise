@@ -46,22 +46,21 @@ If you want you can check the original code here: https://devmag.org.za/2009/04/
 from random import Random
 from typing import Union, Optional, Callable
 
-__all__ = (
-    "Perlin",
-)
+__all__ = ("Perlin",)
 float2d = list[list[float]]
 
 
 class Perlin:
     """The class for PerlinNoise."""
 
-    def __init__(self,
-                 *,
-                 seed: Optional[Union[str, bytes, bytearray, int, float]] = None,
-                 width: int = 128,
-                 height: int = 128,
-                 octave: int = 1
-                 ):
+    def __init__(
+        self,
+        *,
+        seed: Optional[Union[str, bytes, bytearray, int, float]] = None,
+        width: int = 128,
+        height: int = 128,
+        octave: int = 1,
+    ):
         """
         Parameters
         ----------
@@ -161,7 +160,9 @@ class Perlin:
 
         return noise
 
-    def _generate_smooth_noise(self, base: float2d, octave: Optional[int] = None) -> float2d:
+    def _generate_smooth_noise(
+        self, base: float2d, octave: Optional[int] = None
+    ) -> float2d:
         """
         Generates a smoothed noise from a blank/white noise.
 
@@ -205,12 +206,16 @@ class Perlin:
                 sample_w1: int = int(int(sample_w0 + sample_period) % width)
                 horizontal_blend: float = (w - sample_w0) * sample_frequency
 
-                top: float = interpolate(base[sample_h0][sample_w0],
-                                         base[sample_h1][sample_w0],
-                                         horizontal_blend)
-                bottom: float = interpolate(base[sample_h1][sample_w1],
-                                            base[sample_h0][sample_w1],
-                                            horizontal_blend)
+                top: float = interpolate(
+                    base[sample_h0][sample_w0],
+                    base[sample_h1][sample_w0],
+                    horizontal_blend,
+                )
+                bottom: float = interpolate(
+                    base[sample_h1][sample_w1],
+                    base[sample_h0][sample_w1],
+                    horizontal_blend,
+                )
 
                 row.append(interpolate(top, bottom, vertical_blend))
             noise.append(row)
@@ -242,12 +247,12 @@ class Perlin:
 
         octave: int = self.octave
 
-        persistence: float = .5
-        amplitude: float = 1.
+        persistence: float = 0.5
+        amplitude: float = 1.0
         total_amplitude: int = 0
 
         smooth: list[float2d] = []
-        noise: float2d = [[0. for _ in range(width)] for _ in range(height)]
+        noise: float2d = [[0.0 for _ in range(width)] for _ in range(height)]
 
         # generate smooth noise
         for o in range(octave):
@@ -271,15 +276,12 @@ class Perlin:
         return noise
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     from matplotlib import pyplot as plt
 
     square_size: int = 1 << 9
     perlin: Perlin = Perlin(
-        seed="#AU",
-        octave=20,
-        width=square_size,
-        height=square_size
+        seed="#AU", octave=20, width=square_size, height=square_size
     )
     perlin_map: float2d = perlin()
 
@@ -289,6 +291,6 @@ if __name__ == '__main__':
         # cmap="gist_earth")
         # cmap="gray")
         # cmap="plasma")
-        cmap="hot"
+        cmap="hot",
     )
     plt.show()
