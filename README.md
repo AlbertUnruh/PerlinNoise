@@ -39,10 +39,11 @@ from matplotlib import pyplot as plt
 plt.figure(dpi=100)
 plt.imshow(my_perlin_result, cmap="gray")
 # other cmap's I recommend to try are "gist_earth", "plasma" and "hot"
+plt.show()
 ```
 
 ### Did you implement it your own?
-No, I found an example written in `C#` and I "converted" it into `Python3`.
+No, I found an example written in `C#` and I rewrote it in `Python 3`.
 If you want you can check the original code [here](http://devmag.org.za/2009/04/25/perlin-noise/) out.
 
 
