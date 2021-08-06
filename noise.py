@@ -185,7 +185,7 @@ class Perlin:
         :class:`list[list[float]]`
             The new "smoothed noise".
         """
-        interpolate: Callable = self.interpolate
+        interpolate: Callable[[float, float, float], float] = self.interpolate
 
         noise: float2d = []
 
