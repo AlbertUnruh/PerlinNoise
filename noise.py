@@ -249,7 +249,7 @@ class Perlin:
 
         persistence: float = 0.5
         amplitude: float = 1.0
-        total_amplitude: int = 0
+        total_amplitude: float = 0
 
         smooth: list[float2d] = []
         noise: float2d = [[0.0 for _ in range(width)] for _ in range(height)]
